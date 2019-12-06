@@ -10,3 +10,4 @@ My I3-Gaps config on debian
 * [Flameshot](https://flameshot.js.org/#/) (Installation : `sudo apt-get install flameshot`)
 * wicd
 * [I3lock-fancy](https://github.com/meskarune/i3lock-fancy)
+* [Polybar](https://github.com/polybar/polybar)
