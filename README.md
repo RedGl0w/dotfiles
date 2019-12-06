@@ -11,3 +11,4 @@ My I3-Gaps config on debian
 * wicd
 * [I3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 * [Polybar](https://github.com/polybar/polybar)
+* [Oh my zsh](https://ohmyz.sh/)
