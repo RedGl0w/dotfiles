@@ -1,1 +1,12 @@
 # dotfiles
+
+My I3-Gaps config on debian
+
+# Dependencies
+
+* [I3-Gaps](https://github.com/Airblader/i3) ([Install](https://github.com/pasiegel/i3-gaps-install-ubuntu))
+* [Ly](https://github.com/cylgom/ly)
+* [Rofi](https://github.com/davatorium/rofi)
+* [Flameshot](https://flameshot.js.org/#/) (Installation : `sudo apt-get install flameshot`)
+* wicd
+* [I3lock-fancy](https://github.com/meskarune/i3lock-fancy)
