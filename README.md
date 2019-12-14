@@ -11,3 +11,4 @@ My I3-Gaps config on xubuntu
 * [I3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 * [Polybar](https://github.com/polybar/polybar)
 * [Oh my zsh](https://ohmyz.sh/)
+* Beter discord [(install)](https://gist.github.com/ObserverOfTime/d7e60eb9aa7fe837545c8cb77cf31172)
