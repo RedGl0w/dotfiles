@@ -1,6 +1,6 @@
 # dotfiles
 
-My I3-Gaps config on debian
+My I3-Gaps config on xubuntu
 
 # Dependencies
 
@@ -8,7 +8,6 @@ My I3-Gaps config on debian
 * [Ly](https://github.com/cylgom/ly)
 * [Rofi](https://github.com/davatorium/rofi)
 * [Flameshot](https://flameshot.js.org/#/) (Installation : `sudo apt-get install flameshot`)
-* wicd
 * [I3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 * [Polybar](https://github.com/polybar/polybar)
 * [Oh my zsh](https://ohmyz.sh/)
