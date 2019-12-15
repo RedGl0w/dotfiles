@@ -1,6 +1,7 @@
 # dotfiles
 
 My I3-Gaps config on xubuntu
+![Result](https://raw.githubusercontent.com/RedGl0w/dotfiles/master/Screenfetch.png?token=AKL3Y5FQMP6DB7K6XYGFSZS56ZVSQ)
 
 # Dependencies
 
