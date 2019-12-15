@@ -13,3 +13,4 @@ My I3-Gaps config on xubuntu
 * [Polybar](https://github.com/polybar/polybar)
 * [Oh my zsh](https://ohmyz.sh/)
 * Beter discord [(install)](https://gist.github.com/ObserverOfTime/d7e60eb9aa7fe837545c8cb77cf31172)
+* FontAwesome
