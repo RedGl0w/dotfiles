@@ -1,0 +1,280 @@
+[colors]
+background = #222
+foreground = #dfdfdf
+primary = #ffb52a
+CPU = #9c141b
+alert = #bd2c40
+hide = #66
+RAM = #b0b522
+SWAP = #613906
+HighTemperature = #ff0000
+Temperature = #b54200
+HDD = #016904
+WIFI = #ffffff
+Ethernet = #5d0085
+Date = #70cc96
+Keyboard = #3600fa
+Power = #00faf6
+Window = #Window
+
+[font]
+font-0 = NotoSans-Regular:size=12;2
+font-1 = FontAwesome:size=10
+font-2 = "Symbola:style=Regular"
+font-3 = Weather Icons:size=12;1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/top]
+monitor=HDMI-1
+monitor-strict = false
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+overline-size = 2
+overline-color = ${self.background}
+underline-size = 2
+underline-color = ${self.background}
+line-color = ${bar/bottom.background}
+line-size = 1
+
+width = 100%
+height = 32
+
+fixed-center = true
+
+padding = 5
+
+modules-left = cpu RAM SWAP temperature filesystem wireless wired
+modules-right = date keyboard powermenu
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+separator = |
+
+module-margin-left = 3
+module-margin-right = 3
+
+font-0 = ${font.font-0}
+font-1 = ${font.font-1}
+font-3 = ${font.font-3}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/bottom]
+monitor=HDMI-1
+monitor-strict = false
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+overline-size = 10
+overline-color = ${self.background}
+underline-size = 2
+underline-color = ${self.background}
+
+width = 100%
+height = 35
+
+fixed-center = true
+
+padding = 1
+
+modules-left = i3 window
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+separator = |
+
+tray-position = right
+tray-scale = 1
+tray-background = ${self.background}
+tray-maxsize = 26
+tray-offset-y = 0
+tray-detached = false
+tray-padding = 0
+
+font-0 = ${font.font-0}
+font-1 = ${font.font-1}
+font-3 = ${font.font-3}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MODULES;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/i3]
+type = internal/i3
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+format = <label-state>
+
+label-focused = %index%
+label-focused-underline = ${colors.primary}
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-padding = 4
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/filesystem]
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 10
+
+; Display fixed precision values
+; Default: false
+fixed-values = true
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+label-mounted =   : %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.hide}
+label-mounted-overline = ${colors.HDD}
+label-unmounted-overline = ${colors.HDD}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/keyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+indicator-icon-0 = caps lock;-CL;+CL
+
+label-layout = %layout%
+label-layout-padding = 2
+
+label-indicator = %name%
+
+format = <label-layout> <label-indicator>
+
+label-layout-overline = ${colors.Keyboard}
+label-indicator-overline = ${colors.Keyboard}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/powermenu]
+type = custom/menu
+
+format-padding = 5
+
+label-open = 
+label-close = 
+
+label-separator = /
+
+label-open-overline = ${colors.Power}
+label-close-overline = ${colors.Power}
+
+menu-0-0 = Off
+menu-0-0-exec = poweroff &
+menu-0-0-overline = ${colors.Power}
+menu-0-1 = Restart
+menu-0-1-exec = poweroff --reboot &
+menu-0-1-overline = ${colors.Power}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+format = <label> 
+label =  %percentage%%
+label-overline = ${colors.CPU}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/RAM]
+type = internal/memory
+interval = 2
+format = <label>
+label-overline = ${colors.RAM}
+label = RAM %percentage_used%%
+
+
+[module/SWAP]
+type = internal/memory
+interval = 3
+format = <label>
+label-overline = ${colors.SWAP}
+label = Swap %gb_swap_used% / %gb_swap_total%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/temperature]
+type = internal/temperature
+interval = 1
+
+thermal-zone = 0
+
+base-temperature = 20
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-overline= ${colors.Temperature}
+label-warn = HOT! %temperature-c%
+label-warn-foreground = ${colors.alert}
+label-warn-overline= ${colors.HighTemperature}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wireless]
+type = internal/network
+interface = wlo1
+interval = 3.0
+ping-interval = 10
+
+format-connected = <label-connected>
+label-connected =  %local_ip%    %downspeed%    %upspeed%
+label-disconnected =  
+label-disconnected-foreground = ${colors.hide}
+label-connected-overline = ${colors.WIFI}
+label-disconnected-overline = ${colors.WIFI}
+
+[module/wired]
+type = internal/network
+interface = enp5s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <label-connected>
+label-connected = Ethernet %local_ip%    %downspeed%    %upspeed%
+label-disconnected =  Ethernet
+label-disconnected-foreground = ${colors.hide}
+label-connected-overline = ${colors.Ethernet}
+label-disconnected-overline = ${colors.Ethernet}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/date]
+type = internal/date
+format = <label>
+interval = 1.0
+date =  %d%-%m-%Y
+time =  %H:%M%
+label = %date% %time%
+label-overline = ${colors.Date}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/window]
+type = internal/xwindow
+format = <label>
+label = %title%
+label-maxlen = 50
+label-empty = Empty
+label-underline = ${colors.Window}
