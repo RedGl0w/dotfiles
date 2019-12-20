@@ -1,6 +1,6 @@
 # dotfiles
 
-My I3-Gaps config on xubuntu
+My I3-Gaps config on Arch
 ![Result](https://raw.githubusercontent.com/RedGl0w/dotfiles/master/Screenfetch.png?token=AKL3Y5FQMP6DB7K6XYGFSZS56ZVSQ)
 
 # Dependencies
@@ -14,3 +14,4 @@ My I3-Gaps config on xubuntu
 * [Oh my zsh](https://ohmyz.sh/)
 * Beter discord [(install)](https://gist.github.com/ObserverOfTime/d7e60eb9aa7fe837545c8cb77cf31172)
 * FontAwesome
+* Feh
