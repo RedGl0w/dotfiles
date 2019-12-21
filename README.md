@@ -5,7 +5,7 @@ My I3-Gaps config on Arch
 
 # Dependencies
 
-* [I3-Gaps](https://github.com/Airblader/i3) ([Install](https://github.com/pasiegel/i3-gaps-install-ubuntu))
+* [I3-Gaps](https://github.com/Airblader/i3)
 * [Ly](https://github.com/cylgom/ly)
 * [Rofi](https://github.com/davatorium/rofi)
 * [Flameshot](https://flameshot.js.org/#/) (Installation : `sudo apt-get install flameshot`)
