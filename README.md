@@ -15,3 +15,7 @@ My I3-Gaps config on Arch
 * Beter discord [(install)](https://gist.github.com/ObserverOfTime/d7e60eb9aa7fe837545c8cb77cf31172)
 * FontAwesome
 * Feh
+
+# Remap my qwerty keyboard
+
+https://fcbrossard.net/blog/custom-azerty-keyboard-layout
