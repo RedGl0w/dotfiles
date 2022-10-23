@@ -31,6 +31,11 @@ call plug#end()
 "" vimtex
 let g:vimtex_view_method = 'zathura'
 
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \]
+
 "" markdown-preview
 function! g:Open_browser(url)
     silent exec "!firefox --new-window " . a:url . " &"
